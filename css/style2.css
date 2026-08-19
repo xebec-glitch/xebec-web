@@ -1,0 +1,123 @@
+input, button, textarea {
+    font-family: Karla, sans-serif;
+    font-weight: 400 700;
+}
+
+@layer reset {
+    *, ::before,
+    ::after {
+        box-sizing: border-box;
+    }
+}
+
+body {
+    accent-color: rgb(65, 158, 65);
+    font-size: 1rem;
+    font-family: cursive;
+    line-height: 1.6;
+    background-color: rgb(206, 226, 206);
+}
+
+input, button, textarea {
+    font: inherit;
+}
+
+.contact {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    max-inline-size: 800px;
+    margin-inline: auto;
+}
+
+form {
+    display: grid;
+    gap: 1rem;
+
+    @media (width > 700px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.span-all {
+    grid-column: 1 /-1;
+}
+
+h1 {
+    font-family: arial;
+}
+
+.form-group {
+    display: grid;
+}
+
+input, textarea, .form-group:has([type="radio"]) {
+    border: 1px solid rgb(47, 51, 47);
+    border-radius: 7px;
+    padding: 0.5rem 1rem;
+    
+    &:focus-visible{
+        outline-color: green;
+    }
+}
+
+.form-group:has([type="radio"] ,[type="checkbox"]) {
+    display: flex;
+    gap: 1ch;
+}
+
+.form-group:has([type="radio"]:checked) {
+    background-color: rgb(141, 203, 141);
+    border-color: green;
+}
+
+fieldset:has([required]) legend, 
+.form-group:has(:not([type="radio"])[required]) label {
+    gap: 1ch;
+    display: flex;
+
+}
+
+fieldset:has([required]) legend::after,
+.form-group:has(:not([type="radio"])[required]) label::after {
+    content: "*";
+    color: black;
+}
+
+fieldset:has(:valid[required]) legend::after,
+.form-group:has(:valid[required]) label::after {
+    color: green;
+}
+
+fieldset {
+    padding: 0;
+    border: 0;
+    display: grid;
+    gap: inherit;
+    grid-template-columns: inherit;
+}
+
+textarea {
+    resize: block;
+    height: 3lh;
+    box-sizing: content-box;
+}
+
+[type="radio"],
+[type="checkbox"] {
+    width: 1rem;
+}
+
+button {
+    background: rgb(6, 113, 6);
+    color: white;
+    border: 0;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+
+    &:hover,
+    &:focus-visible {
+        background-color: rgb(1, 44, 1);
+    }
+}
+

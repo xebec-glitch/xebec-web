@@ -1,6 +1,12 @@
 /* id # 1per page */
 /* class . */
 /* css selector */
+/* cursor: pointer */
+/* :hover (background-color) {
+ opacity: [0,1]
+}*/
+/* transition: opacity 0.3s ease */
+/* box-shadow: 0 4px 0 #0b4a5a */
 .all {
     max-inline-size: 1000px;
     margin-inline: auto;
@@ -161,3 +167,28 @@ ol {
     list-style-position: outside;
 }
 
+
+
+
+table {
+    width: 80%;
+    background-color: #087a98;
+    color: white;
+    border-collapse: collapse;
+    margin: 0 auto;
+    max-inline-size: 100%;
+    overflow-x: scroll;
+}
+caption,th,td {
+    border: 1px solid white;
+    padding: 10px;
+    text-align: center;
+}
+tr:nth-of-type(odd) {
+    background-color: #0b4a5a;
+}
+td::before {
+    content: attr(data-cell) ": ";
+    color: white;
+    text-transform: capitalize;
+}
